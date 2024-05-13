@@ -16,8 +16,8 @@ import { ModalService } from './task.modal.service';
 export class AllTasksComponent implements OnInit {
   tasks: Task[] = [];
   filteredTasks: Task[] = [];
-  selectedStatus: string = 'all'; // Выбранный статус для фильтрации
-  selectedAssignee: string = 'all'; // Выбранный исполнитель для фильтрации
+  selectedStatus: string = 'all';
+  selectedAssignee: string = 'all';
 
   constructor(private taskService: TaskService, private modalService: ModalService) {}
 
@@ -27,7 +27,6 @@ export class AllTasksComponent implements OnInit {
   }
 
   editTask(task: Task): void {
-    // Открываем модальное окно для редактирования задачи
     this.modalService.openEditTaskModal(task);
   }
 
@@ -41,14 +40,11 @@ export class AllTasksComponent implements OnInit {
     this.loadTasks();
   }
 
-  // Функция для применения фильтров
   applyFilters() {
     this.filteredTasks = this.tasks.filter(task => {
-      // Применяем фильтр по статусу
       if (this.selectedStatus !== 'all' && task.status !== this.selectedStatus) {
         return false;
       }
-      // Применяем фильтр по исполнителю
       if (this.selectedAssignee !== 'all' && !task.assignees.includes(this.selectedAssignee)) {
         return false;
       }
@@ -61,5 +57,12 @@ export class AllTasksComponent implements OnInit {
       return new Date(b.deadline).getTime() - new Date(a.deadline).getTime();
     });
   }
-
+  updatePriority(task: Task, priority: 'низкий' | 'средний' | 'высокий') {
+    task.priority = priority;
+  }
+  
+  updateStatus(task: Task, status: 'сделать' | 'в процессе' | 'сделано') {
+    task.status = status;
+  }
+  
 }

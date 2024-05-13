@@ -3,8 +3,8 @@ export interface Task {
     title: string;
     description?: string;
     deadline: string;
-    priority: 'low' | 'medium' | 'high';
-    status: 'todo' | 'inprogress' | 'done';
+    priority: 'низкий' | 'средний' | 'высокий';
+    status: 'сделать' | 'в процессе' | 'сделано';
     assignees: string[];
 }
   

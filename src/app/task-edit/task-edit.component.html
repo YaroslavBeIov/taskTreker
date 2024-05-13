@@ -1,4 +1,3 @@
-<!-- edit-task.component.html -->
 <div>
     <h2>Edit Task</h2>
     <label>Title: </label>
@@ -9,16 +8,16 @@
     <input type="text" [(ngModel)]="task.deadline"><br>
     <label>Priority: </label>
     <select [(ngModel)]="task.priority">
-      <option value="low">Low</option>
-      <option value="medium">Medium</option>
-      <option value="high">High</option>
+      <option value="low">низкий</option>
+      <option value="medium">средний</option>
+      <option value="high">высокий</option>
     </select><br>
     <label>Status: </label>
     <select [(ngModel)]="task.status">
-      <option value="todo">To Do</option>
-      <option value="inprogress">In Progress</option>
-      <option value="done">Done</option>
+      <option value="todo">сделать</option>
+      <option value="inprogress">в процессе</option>
+      <option value="done">сделано</option>
     </select><br>
-    <button (click)="onSave()">Save</button>
+    <button (click)="onSave()">сохранить</button>
   </div>
   

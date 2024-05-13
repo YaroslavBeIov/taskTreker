@@ -1,4 +1,3 @@
-// task-create.component.ts (пример)
 import { Component } from '@angular/core';
 import { Task } from './task.model';
 import { TaskService } from './task.service';
@@ -17,8 +16,8 @@ export class TaskCreateComponent {
     title: '',
     description: '',
     deadline: '',
-    priority: 'low',
-    status: 'todo',
+    priority: 'низкий',
+    status: 'сделать',
     assignees: [],
     id: undefined
   };
@@ -31,8 +30,8 @@ export class TaskCreateComponent {
       title: '',
       description: '',
       deadline: '',
-      priority: 'low',
-      status: 'todo',
+      priority: 'низкий',
+      status: 'сделать',
       assignees: [],
       id: undefined
     };
