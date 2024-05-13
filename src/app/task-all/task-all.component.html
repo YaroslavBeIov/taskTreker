@@ -1,0 +1,24 @@
+<h2>Список всех задач</h2>
+<select [(ngModel)]="selectedStatus" (change)="applyFilters()">
+  <option value="all">Все статусы</option>
+  <option value="todo">сделать</option>
+  <option value="inprogress">в процессе</option>
+  <option value="done">сделано</option>
+</select>
+<select [(ngModel)]="selectedAssignee" (change)="applyFilters()">
+  <option value="all">Все исполнители</option>
+</select>
+<button (click)="sortByDeadline()">Сортировать по дедлайну</button>
+<ul>
+  <li *ngFor="let task of filteredTasks" class="task-item">
+    <strong class="task-title">Название задачи:</strong>
+    <p class="task-description">{{ task.title }}</p>
+    <p class="task-details">Описание: {{ task.description }}</p>
+    <p class="task-details">Срок: {{ task.deadline }}</p>
+    <p class="task-details">Приоритет: {{ task.priority }}</p>
+    <p class="task-details">Статус: {{ task.status }}</p>
+    <p class="task-details">Исполнитель: {{ task.assignees }}</p>
+    <button (click)="editTask(task)">Редактировать</button>
+    <button (click)="deleteTask(task.id)">Удалить</button>
+  </li>
+</ul>

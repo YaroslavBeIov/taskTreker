@@ -1,0 +1,24 @@
+<!-- edit-task.component.html -->
+<div>
+    <h2>Edit Task</h2>
+    <label>Title: </label>
+    <input type="text" [(ngModel)]="task.title"><br>
+    <label>Description: </label>
+    <textarea [(ngModel)]="task.description"></textarea><br>
+    <label>Deadline: </label>
+    <input type="text" [(ngModel)]="task.deadline"><br>
+    <label>Priority: </label>
+    <select [(ngModel)]="task.priority">
+      <option value="low">Low</option>
+      <option value="medium">Medium</option>
+      <option value="high">High</option>
+    </select><br>
+    <label>Status: </label>
+    <select [(ngModel)]="task.status">
+      <option value="todo">To Do</option>
+      <option value="inprogress">In Progress</option>
+      <option value="done">Done</option>
+    </select><br>
+    <button (click)="onSave()">Save</button>
+  </div>
+  

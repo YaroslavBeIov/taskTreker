@@ -1,0 +1,39 @@
+<div>
+    <h2>Создание новой задачи</h2>
+    <form (ngSubmit)="onSubmit()">
+      <div>
+        <label>Название:</label>
+        <input type="text" name="title" [(ngModel)]="task.title" required>
+      </div>
+      <div>
+        <label>Описание:</label>
+        <input type="text" name="description" [(ngModel)]="task.description">
+      </div>
+      <div>
+        <label>Дедлайн:</label>
+        <input type="date" name="deadline" [(ngModel)]="task.deadline">
+      </div>
+      <div>
+        <label>Приоритет:</label>
+        <select name="priority" [(ngModel)]="task.priority">
+          <option value="low">низкий</option>
+          <option value="medium">средний</option>
+          <option value="high">высокий</option>
+        </select>
+      </div>
+      <div>
+        <label>Статус:</label>
+        <select name="status" [(ngModel)]="task.status">
+          <option value="todo">сделать</option>
+          <option value="inprogress">в процессе</option>
+          <option value="done">сделано</option>
+        </select>
+      </div>
+      <div>
+        <label>Исполнитель:</label>
+        <input type="text" name="assignees" [(ngModel)]="task.assignees" required>
+      </div>
+      <button type="submit">Создать задачу</button>
+    </form>
+  </div>
+  
